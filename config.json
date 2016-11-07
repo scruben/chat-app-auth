@@ -1,0 +1,19 @@
+{
+	"dev": {
+		"hostname": "localhost",
+		"port": "3000"
+	},
+	"prod": {
+		"hostname": "localhost",
+		"port": "3000"
+	},
+	"db": {
+		"name": "cw_chat",
+		"user": "admin",
+		"pass": "admin"
+	}
+}
+
+
+
+

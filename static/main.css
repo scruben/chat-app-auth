@@ -1,0 +1,125 @@
+body {
+  background-color: #FFF;
+  color: white;
+  font-size: 17px;
+  font-family: monospace;
+  /*height: 100%;*/
+  /*margin: 0;*/
+  /*display: flex;*/
+}
+
+.outer {
+  background-color: #DDD;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 80%;
+  max-width: 764px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 20px;
+  border: solid black 2px;
+  border-radius: 20px;
+  justify-content: space-between;
+  height: 90vh;
+}
+
+.messages {
+  padding-right: 15px;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 90vh;
+  max-height: 80vh;
+  display: flex;
+}
+
+.input_div {
+  border: none;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  display: flex;
+  justify-content: space-between;
+}
+
+.text_input {
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  height: 35px;
+  font-size: 17px;
+  font-family: monospace;
+  padding-left: 10px;
+  outline: none;
+  flex: 1 1 auto;
+  align-self: auto;
+  width: 80%;
+  min-width: 80px;
+  margin-right: 10px;
+}
+
+.send_button {
+  margin-top: 10px;
+  background-color: #999;
+  border: solid black 2px;
+  border-radius: 10px;
+  height: 35px;
+  width: 75px;
+  flex: 0 1 auto;
+  min-width: 75px;
+  font-size: 17px;
+  font-family: monospace;
+  outline: none;
+  align-self: auto;
+}
+
+.send_button:click {
+  animation-name: clickButton;
+  animation-duration: 1s;
+}
+
+@keyframes clickButton {
+  0% {
+   background-color: #999;
+   opacity: 1.0;
+   transform: scale(1.0) rotate(0deg);
+ }
+ 33% {
+   background-color: green;
+   opacity: 0.75;
+   transform: scale(1.1) rotate(-5deg);
+ }
+ 67% {
+   background-color: green;
+   opacity: 0.5;
+   transform: scale(1.1) rotate(5deg);
+ }
+ 100% {
+   background-color: #999;
+   opacity: 1.0;
+   transform: scale(1.0) rotate(0deg);
+ }
+}
+
+.message {
+  margin-bottom: 15px;
+  animation-name: enterMessage;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  position: relative;
+}
+
+@keyframes enterMessage {
+    from {opacity: 0; bottom: -100px;}
+    to {opacity: 1; bottom: 0px; }
+}
+
+.time {
+  font-size: 12px;
+  border-bottom: solid black 1px;
+  text-align: right;
+  margin-bottom: 7px;
+}
