@@ -39,19 +39,31 @@ function keepScrolled(elementId) {
 
 $(function () {
   $('.messages').val();  //  clear before adding messages from memory
-  //  retrieve the last messages
-  getLatestMessages();
 
-  //  add a new message
-  $('button').click(function () {
-    let text = $('input').val();
-    text && postMsg(text);
-    $('input').val('');
-  });
+  // check for authorization
+  if (localStorage.getItem("tokenId") !== undefined) {
+    //  retrieve the last messages
+    getLatestMessages();
 
-  $(".text_input").keyup(function(event){
-    if (event.keyCode == 13) {
-        $('button').click();
-    }
-  });
+    //  add a new message
+    $('.send_button').click(function () {
+      let text = $('input').val();
+      text && postMsg(text);
+      $('input').val('');
+    });
+
+    $(".text_input").keyup(function(event){
+      if (event.keyCode == 13) {
+          $('button').click();
+      }
+    });
+
+    $('.log_out').click(function () {
+      localStorage.setItem("tokenId", undefined);
+      location = '/';
+    });
+
+  } else {
+    location = '/login.html';
+  }
 });
